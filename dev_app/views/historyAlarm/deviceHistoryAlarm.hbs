@@ -1,0 +1,22 @@
+
+
+<div class="timeline">
+    {{#each resultList}}
+        <div class="area_history_box">
+            <p class="day"><span class="sprite sprite_common sprite_history_dot">?</span>{{checkSendMd sendMd}}</p>
+            <div class="box_alarm">
+                <div class="alarm_desc alarm_device_desc">
+                    <p class="desc">[{{dvcNick}}]의 {{actMsg}}</p>
+                    <p class="time">{{checkSendHm sendHm}}</p>
+                </div>
+            </div>
+            <!--<div class="box_alarm">
+                <div class="alarm_desc alarm_device_desc">
+                    <p class="desc error_desc"><span class="sprite sprite_common sprite_network_error"></span>연결상태를 알 수 없습니다.</p>
+                    <p class="time">오후 03:41</p>
+                </div>
+            </div>-->
+        </div>
+    {{/each}}
+
+</div>

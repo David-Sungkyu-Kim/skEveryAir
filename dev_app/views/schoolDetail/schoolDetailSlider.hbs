@@ -1,0 +1,135 @@
+<div class="slider">
+    {{#each oDeviceInfo}}
+        <div class="box_slide {{dvcCd}} dvc_{{dvcKindCd}}">
+            {{#deviceKindCode dvcKindCd}}
+                <!--공기청청기-->
+                {{#lgDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle">
+                                <p class="air">실내공기 상태</p>
+                                <p class="status">{{fncInfoCheck fncInfo connStatYn}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/lgDeviceCheck}}
+                {{#samsungDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle">
+                                <p class="air">공기 상태</p>
+                                <p class="status">{{fncInfoCheck fncInfo connStatYn}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/samsungDeviceCheck}}
+                {{#winixDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle">
+                                <p class="air">공기상태</p>
+                                <p class="status">{{fncInfoCheck fncInfo connStatYn}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/winixDeviceCheck}}
+                {{#winixXqDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle">
+                                <p class="air">공기상태</p>
+                                <p class="status">{{fncInfoCheck fncInfo connStatYn}}</p>
+                                <p class="dust">초 미세먼지 {{isDataNano connStatYn}}<span class="txt_ug">㎍</span>/㎥</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/winixXqDeviceCheck}}
+                {{#chunghoDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle">
+                                <p class="air">공기상태</p>
+                                <p class="status">{{fncInfoCheck fncInfo connStatYn}}</p>
+                                <p class="dust">미세먼지 {{isDataMicro pm10 connStatYn}}<span class="txt_ug">㎍</span>/㎥</p>
+                                <p class="dust">가스상태 {{isDataGas connStatYn}}</p>
+                                <p class="dust"> 습도 {{ isHmdt hmdt connStatYn}}%</p>
+                                <p class="dust">온도 {{ isTemp temp connStatYn}}℃</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/chunghoDeviceCheck}}
+
+                {{#lgDeviceCheck dvcCd}}
+                    <div class="info_outside">
+                        <p class="outside">실내</p>
+                        <p class="degree">극초미세먼지 {{isDataNanoMicro connStatYn}}㎍/㎥ / 초미세먼지 {{isDataNano connStatYn}}<span class="txt_ug">㎍</span>/㎥ / 미세먼지 {{isDataMicro connStatYn}}<span class="txt_ug">㎍</span>/㎥</p>
+                    </div>
+                {{/lgDeviceCheck }}
+                {{#samsungDeviceCheck dvcCd}}
+                    <div class="info_outside">
+                        <p class="outside">실외</p>
+                        <p class="degree">공기 상태 {{isOutFncInfo fncInfo connStatYn}}</p>
+                        <p class="degree">습도 {{ isDataHmdt connStatYn}}% / 온도 {{ isDataTemp connStatYn }}℃</p>
+                    </div>
+                {{/samsungDeviceCheck}}
+                {{#winixDeviceCheck dvcCd}}
+                    <div class="info_outside">
+                        <p class="outside">실외</p>
+                        <p class="degree">온도 {{ isDataTemp connStatYn}}℃ / 습도 {{ isDataHmdt connStatYn}}%</p>
+                    </div>
+                {{/winixDeviceCheck}}
+                {{#chunghoDeviceCheck dvcCd}}
+                    <div class="info_outside">
+                        <p class="outside">실외</p>
+                        <p class="degree">공기 상태 {{isOutFncInfo connStatYn}}</p>
+                        <p class="degree">미세먼지 {{isOutDataMicro connStatYn}}<span class="txt_ug">㎍</span>/㎥ / 습도 {{ isDataHmdt connStatYn }}% / 온도 {{ isDataTemp connStatYn}}℃</p>
+                    </div>
+                {{/chunghoDeviceCheck}}
+
+
+            {{else}}
+                <!--실내센서-->
+                {{#awairDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{awairAirStateColor fncVal connStatYn}}">
+                            <div class="circle circle_sensor">
+                                <p class="score">종합점수 <span id="pointFncVal">{{awairFncValCheck connStatYn}}</span></p>
+                                <p class="status" id="diffStatus">{{fncInfoCheck fncInfo connStatYn}}</p>
+                            </div>
+                        </div>
+                        <div class="box_btn">
+                            <button class="btn_report"><span class="sprite sprite_common sprite_icon_graph_statistic">아이콘</span>공기리포트</button>
+                        </div>
+                    </div>
+                {{/awairDeviceCheck}}
+                {{#sensorDeviceCheck dvcCd}}
+                    <div>
+                        <p class="air_product">{{dvcKindNm}}</p>
+                        <p class="air_product_name">{{dvcNickNm}}</p>
+                        <div class="circle_air_status {{airStateColor fncInfo connStatYn}}">
+                            <div class="circle circle_sensor">
+                                <p class="score">종합점수 <span id="pointFncVal">{{sensorFncValCheck connStatYn}}</span></p>
+                                <p class="status" id="diffStatus">{{fncInfoCheck fncInfo connStatYn}}</p>
+                            </div>
+                        </div>
+                        <div class="box_btn">
+                            <button class="btn_report"><span class="sprite sprite_common sprite_icon_graph_statistic">아이콘</span>공기리포트</button>
+                        </div>
+                    </div>
+                {{/sensorDeviceCheck}}
+            {{/deviceKindCode}}
+        </div>
+    {{/each}}
+</div>

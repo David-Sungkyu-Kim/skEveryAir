@@ -1,0 +1,1421 @@
+{
+	"variables": [],
+	"info": {
+		"name": "1. SKT_school_member",
+		"_postman_id": "d9cbe2a0-b629-d72a-0e8f-460898f7f5d6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "001 회원 로그인",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/company/login?loginId=smartair1@sk.com&loginPwd=1234qwer&pushTknVal=&dvcTnkVal=&dvcOsNm=&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"company",
+						"login"
+					],
+					"query": [
+						{
+							"key": "loginId",
+							"value": "smartair1@sk.com",
+							"equals": true,
+							"description": "회원가입아이디"
+						},
+						{
+							"key": "loginPwd",
+							"value": "1234qwer",
+							"equals": true,
+							"description": "패스워드"
+						},
+						{
+							"key": "pushTknVal",
+							"value": "",
+							"equals": true,
+							"description": "푸쉬토큰(EndpoNumber Id)"
+						},
+						{
+							"key": "dvcTnkVal",
+							"value": "",
+							"equals": true,
+							"description": "Device Identity(안드로이드:IMEI,iOS:별도 고유키,WEB:빈값)"
+						},
+						{
+							"key": "dvcOsNm",
+							"value": "",
+							"equals": true,
+							"description": "Device OS (ANDROID, IOS,WEB)"
+						},
+						{
+							"key": "ukyUseConfirmYn",
+							"value": "",
+							"equals": false,
+							"description": "U-KEY 요금제 사용 확인 여부(Y , N)",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": "school"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcId\" : \"D93033427537\"\r\n\"schdStartTime\" : \"050000\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "002 회원 로그아웃",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/logout",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFR30DHe7N8omaOuATXruavA",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcIdList\": [\r\n  {\"rtnDvcId\": \"D93033427537\"}\r\n,   {\"rtnDvcId\": \"D51777976497\"}\r\n,   {\"rtnDvcId\": \"D85637884641\"}\r\n]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "003 사용자 인증확인 메시지발송SMS",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/certification?mobileNo=01033776687&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"certification"
+					],
+					"query": [
+						{
+							"key": "mobileNo",
+							"value": "01033776687",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcIdList\": [\r\n  {\"rtnDvcId\": \"D93033427537\"}\r\n,   {\"rtnDvcId\": \"D51777976497\"}\r\n,   {\"rtnDvcId\": \"D85637884641\"}\r\n]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "004 사용자 인증확인",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/userCertification?mobileNo=01033776687&certNo=586990&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"userCertification"
+					],
+					"query": [
+						{
+							"key": "mobileNo",
+							"value": "01033776687",
+							"equals": true,
+							"description": "전화번호"
+						},
+						{
+							"key": "certNo",
+							"value": "586990",
+							"equals": true,
+							"description": "인증번호"
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": "school"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcIdList\": [\r\n  {\"rtnDvcId\": \"D93033427537\"}\r\n,   {\"rtnDvcId\": \"D51777976497\"}\r\n,   {\"rtnDvcId\": \"D85637884641\"}\r\n]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "005 회원가입",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/company/registerMember",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"company",
+						"registerMember"
+					],
+					"query": [
+						{
+							"key": "loginId",
+							"value": "",
+							"equals": false,
+							"description": "아이디(이메일)",
+							"disabled": true
+						},
+						{
+							"key": "loginPwd",
+							"value": "",
+							"equals": false,
+							"description": "비밀번호",
+							"disabled": true
+						},
+						{
+							"key": "userNickNm",
+							"value": "",
+							"equals": false,
+							"description": "사용자별명",
+							"disabled": true
+						},
+						{
+							"key": "userMobileNo",
+							"value": "",
+							"equals": false,
+							"description": "certNo",
+							"disabled": true
+						},
+						{
+							"key": "dvcTknVal",
+							"value": "",
+							"equals": false,
+							"description": "Device Identity(안드로이드:IMEI,iOS:별도 고유키)",
+							"disabled": true
+						},
+						{
+							"key": "dvcOsNm",
+							"value": "",
+							"equals": false,
+							"description": "Device OS",
+							"disabled": true
+						},
+						{
+							"key": "fileNm",
+							"value": "",
+							"equals": false,
+							"description": "디폴트 프로파일 명(O)",
+							"disabled": true
+						},
+						{
+							"key": "locAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "위치동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.)",
+							"disabled": true
+						},
+						{
+							"key": "mktAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "광고수신동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "infAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "개인정보동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "ariAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "음성인식 수신동의 여부(Y/N)(O)",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"loginId\": \"kkkk@sk.com\",\r\n\"loginPwd\": \"1234qwer\",\r\n\"userNickNm\": \"kkkkkkkk\",\r\n\"userMobileNo\": \"01033776687\",\r\n\"certNo\": \"\",\r\n\"dvcTknVal\": \"\",\r\n\"dvcOsNm\": \"\",\r\n\"fileNm\": \"\",\r\n\"locAgrYn\": \"\",\r\n\"mktAgrYn\": \"\",\r\n\"infAgrYn\": \"\",\r\n\"ariAgrYn\" : \"\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "006 프로필 사진 업로드",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/file",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"file"
+					],
+					"query": [
+						{
+							"key": "fileNm",
+							"value": "",
+							"equals": false,
+							"description": "디폴트 프로파일 명(O)",
+							"disabled": true
+						},
+						{
+							"key": "locAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "위치동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.)",
+							"disabled": true
+						},
+						{
+							"key": "mktAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "광고수신동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "infAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "개인정보동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "ariAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "음성인식 수신동의 여부(Y/N)(O)",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userIdEncoded\": \"e1ygX943/2Wi0eb7NOoxC0OuTYSKSUs4\",\r\n\"file1\": \"사진1\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "007 디폴트 프로필 사진 업로드",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/file/default",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"file",
+						"default"
+					],
+					"query": [
+						{
+							"key": "fileNm",
+							"value": "",
+							"equals": false,
+							"description": "디폴트 프로파일 명(O)",
+							"disabled": true
+						},
+						{
+							"key": "locAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "위치동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.)",
+							"disabled": true
+						},
+						{
+							"key": "mktAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "광고수신동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "infAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "개인정보동의 여부 Y/N (값 없으면 디폴트 \"N\" 입니다.(O)",
+							"disabled": true
+						},
+						{
+							"key": "ariAgrYn",
+							"value": "",
+							"equals": false,
+							"description": "음성인식 수신동의 여부(Y/N)(O)",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userIdEncoded\": \"e1ygX943/2Wi0eb7NOoxC0OuTYSKSUs4\",\r\n\"fileNm\": \"사진1\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "008 아이디 찾기",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/searchLoginId?userMobileNo=01033776687&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"searchLoginId"
+					],
+					"query": [
+						{
+							"key": "userMobileNo",
+							"value": "01033776687",
+							"equals": true,
+							"description": "사용자 모바일"
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userIdEncoded\": \"\",\r\n\"fileNm\": \"\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "009 패스워드 인증발송",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/password/cert?loginId=kkk@sk.com&userMobileNo=01033776687&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"password",
+						"cert"
+					],
+					"query": [
+						{
+							"key": "loginId",
+							"value": "kkk@sk.com",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "userMobileNo",
+							"value": "01033776687",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipJwuvl61B3K1n0RUzxUa+pU17LfSufu/G",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userIdEncoded\": \"\",\r\n\"fileNm\": \"\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "010 패스워드 인증확인 및 메일발송",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/password/mail?loginId=kkk@sk.com&userMobileNo=01033776687&certNo=967921&paramFlg=H&company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"password",
+						"mail"
+					],
+					"query": [
+						{
+							"key": "loginId",
+							"value": "kkk@sk.com",
+							"equals": true,
+							"description": "로그인 아이디"
+						},
+						{
+							"key": "userMobileNo",
+							"value": "01033776687",
+							"equals": true,
+							"description": "사용자 전화번호"
+						},
+						{
+							"key": "certNo",
+							"value": "967921",
+							"equals": true,
+							"description": "인증번호"
+						},
+						{
+							"key": "paramFlg",
+							"value": "H",
+							"equals": true,
+							"description": "비밀번호 전송방법(H : 휴대폰, E : 이메일)"
+						},
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFR30DHe7N8omaOuATXruavA",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userIdEncoded\": \"\",\r\n\"fileNm\": \"\",\r\n\"company\": \"school\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "011 닉네임 변경",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/updateMember/nick",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipJwuvl61B3K1n0RUzxUa+pU17LfSufu/G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userNickNm\": \"가나다\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "012 패스워드 변경",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/updateMember/pwd",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipJwuvl61B3K1n0RUzxUa+pU17LfSufu/G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"loginPwd\": \"1234qwer\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "013 휴대폰번호 변경",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/updateMember/mobileNo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipJwuvl61B3K1n0RUzxUa+pU17LfSufu/G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userMobileNo\": \"01033776687\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "014 회원탈퇴(uKey 요금제 가입자 탈퇴제한)",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/drop",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWiptQo+v6Xr7p/6U1YwE9dcv2Ih3AVV5VcX",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "015 이용약관 URL(Be-Me 약관 추가)",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/prov",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "016 회원정보 조회",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/info",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipJwuvl61B3K1n0RUzxUa+pU17LfSufu/G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "017 패스워드 확인",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/password/check?loginPwd=1234qwer",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"password",
+						"check"
+					],
+					"query": [
+						{
+							"key": "loginPwd",
+							"value": "1234qwer",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFT6U1YwE9dcv9lbMXhV//4G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "018 이전 기기 로그아웃: API 확인안됨",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/password/check?loginPwd",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"password",
+						"check"
+					],
+					"query": [
+						{
+							"key": "loginPwd",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFT6U1YwE9dcv9lbMXhV//4G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "019 사용 동의",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/updateProvUseYn?company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"updateProvUseYn"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFT6U1YwE9dcv9lbMXhV//4G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "020 이용약관",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/common/terms?company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"common",
+						"terms"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFT6U1YwE9dcv9lbMXhV//4G",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "021 개인정보취급안내",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/common/private?company=school",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"common",
+						"private"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "school",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "022 광고성 정보 수신설정",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/updateMember/updateSvcProvAgr",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFT6U1YwE9dcv9lbMXhV//4G",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"agrKindCd\": \"PRB\",\n\t\"mktAgrYn\": \"Y\",\n\t\"infAgrYn\": \"Y\",\n\t\"ariAgrYn\": \"Y\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "023 관리자 정보 초기화",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/admin/reset",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company\": \"school\",\n\t\"userIdList\": [{\"userIdEncoded\":\"e1ygX943/2Wi0eb7NOoxC+7VHjBNX/wl\"}]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "024 관리자 편집",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/admin/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"company\": \"school\",\n\t\"userIdEncoded\": \"e1ygX943/2Wi0eb7NOoxC+7VHjBNX/wl\",\n\t\"userNm\": \"1\",\n\t\"userNickNm\": \"1\",\n\t\"userMobileNo\": \"01033776687\",\n\t\"userEmail\": \"kkkk@sk.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "025 사용자 푸시설정영역 조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/msgAreaInfo?resultList[msgGoodsChgYn]=Y&resultList[msgSmartOptYn]=Y&resultList[msgDefectYn]=Y&resultList[msgEventYn]=Y&resultList[mktAgrYn]=Y&resultList[mktAgrDtm]=20160708",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"msgAreaInfo"
+					],
+					"query": [
+						{
+							"key": "resultList[msgGoodsChgYn]",
+							"value": "Y",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "resultList[msgSmartOptYn]",
+							"value": "Y",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "resultList[msgDefectYn]",
+							"value": "Y",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "resultList[msgEventYn]",
+							"value": "Y",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "resultList[mktAgrYn]",
+							"value": "Y",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "resultList[mktAgrDtm]",
+							"value": "20160708",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTudAVwmtXLZyrB8OGcnZJk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,1166 @@
+{
+	"variables": [],
+	"info": {
+		"name": "2.  SKT_school_device",
+		"_postman_id": "b15c3528-2da4-b75d-3df6-fe6ea997afc8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "101 실내공기센서, 공기청정기 상태 목록",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/air/airStatusList?dvclist[dvcId]=UDC00000000000107363",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"air",
+						"airStatusList"
+					],
+					"query": [
+						{
+							"key": "dvclist[dvcId]",
+							"value": "UDC00000000000107363",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbP96NkCccw5R",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "102 실내공기센서 목록",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/member/msgAreaInfo?dvclist[dvcId]=D85637884641",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"member",
+						"msgAreaInfo"
+					],
+					"query": [
+						{
+							"key": "dvclist[dvcId]",
+							"value": "D85637884641",
+							"equals": true,
+							"description": "디바이스 리스트"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbP96NkCccw5R",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "103 실내공기센서 공기리포트 일간조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/air/dailyReport?reqType=000&reqDate=2017-03-12",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"air",
+						"dailyReport"
+					],
+					"query": [
+						{
+							"key": "reqType",
+							"value": "000",
+							"equals": true,
+							"description": "요청구분(종합점수,온도,습도,미세먼지,TVOC,이산화탄소) (000~005) *defalut:000"
+						},
+						{
+							"key": "reqDate",
+							"value": "2017-03-12",
+							"equals": true,
+							"description": "요청날짜 (2017-03-12)"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "104 실내공기센서 공기리포트 주간조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/air/weeklyReport?reqType=000&reqDate=2017-03-12",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"air",
+						"weeklyReport"
+					],
+					"query": [
+						{
+							"key": "reqType",
+							"value": "000",
+							"equals": true,
+							"description": "요청구분(종합점수,온도,습도,미세먼지,TVOC,이산화탄소) (000~005) *defalut:000"
+						},
+						{
+							"key": "reqDate",
+							"value": "2017-03-12",
+							"equals": true,
+							"description": "요청날짜 (2017-03-12)"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "105 실내공기센서 공기리포트 월간조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/air/monthlyReport?reqType=001&reqDate=2017-03-12",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"air",
+						"monthlyReport"
+					],
+					"query": [
+						{
+							"key": "reqType",
+							"value": "001",
+							"equals": true,
+							"description": "요청구분(종합점수,온도,습도,미세먼지,TVOC,이산화탄소) (000~005) *defalut:000"
+						},
+						{
+							"key": "reqDate",
+							"value": "2017-03-12",
+							"equals": true,
+							"description": "요청날짜 (2017-03-12)"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "106 공기청정기 목록: url 없음",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/air/monthlyReport?reqType=002&reqDate=2017-03-12",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"air",
+						"monthlyReport"
+					],
+					"query": [
+						{
+							"key": "reqType",
+							"value": "002",
+							"equals": true,
+							"description": "요청구분(종합점수,온도,습도,미세먼지,TVOC,이산화탄소) (000~005) *defalut:000"
+						},
+						{
+							"key": "reqDate",
+							"value": "2017-03-12",
+							"equals": true,
+							"description": "요청날짜 (2017-03-12)"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "107 실내공기센서, 공기청정기 이력 및 알람 목록",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/common/deviceOpr?sendSer&rtnDvcId&msgTypeInfo&sendFlag&count",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"common",
+						"deviceOpr"
+					],
+					"query": [
+						{
+							"key": "sendSer",
+							"value": "",
+							"equals": false,
+							"description": "발송일련 번호 (페이징 조회시 sendFlag 값도 필수로 넣어주셔야 됩니다)"
+						},
+						{
+							"key": "rtnDvcId",
+							"value": "",
+							"equals": false,
+							"description": "제어용 디바이스 아이디"
+						},
+						{
+							"key": "msgTypeInfo",
+							"value": "",
+							"equals": false,
+							"description": "방범 메시지 : security (방법메시지만 조회일 경우)\n* 방범 메시지만 조회일 경우 rtnDvcId 없어도 됨."
+						},
+						{
+							"key": "sendFlag",
+							"value": "",
+							"equals": false,
+							"description": "page Flag(U, D)\nU : sendSer 기준 위로 조회\nD : sendSer 기준 아래로 조회"
+						},
+						{
+							"key": "count",
+							"value": "",
+							"equals": false,
+							"description": "조회 할 count"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "108 실내공기센서, 공기청정기 정보: url없음",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/common/deviceOpr?sendSer&rtnDvcId&msgTypeInfo&sendFlag&count",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"common",
+						"deviceOpr"
+					],
+					"query": [
+						{
+							"key": "sendSer",
+							"value": "",
+							"equals": false,
+							"description": "발송일련 번호 (페이징 조회시 sendFlag 값도 필수로 넣어주셔야 됩니다)"
+						},
+						{
+							"key": "rtnDvcId",
+							"value": "",
+							"equals": false,
+							"description": "제어용 디바이스 아이디"
+						},
+						{
+							"key": "msgTypeInfo",
+							"value": "",
+							"equals": false,
+							"description": "방범 메시지 : security (방법메시지만 조회일 경우)\n* 방범 메시지만 조회일 경우 rtnDvcId 없어도 됨."
+						},
+						{
+							"key": "sendFlag",
+							"value": "",
+							"equals": false,
+							"description": "page Flag(U, D)\nU : sendSer 기준 위로 조회\nD : sendSer 기준 아래로 조회"
+						},
+						{
+							"key": "count",
+							"value": "",
+							"equals": false,
+							"description": "조회 할 count"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "109 기기명 변경",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/DeviceNm",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dvcId\": \"UDC00000000000107391\",\n    \"dvcNickNm\": \"공기청정기\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "110 기기해제",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/deleteDevice",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"deleteDevice"
+					],
+					"query": [
+						{
+							"key": "rtnDvcId",
+							"value": "",
+							"equals": false,
+							"description": "유저별 등록 디바이스  PK",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rtnDvcId\": \"D93033427537\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "111 제품군 목록, 제품군의 기기 목록",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/school/v1/device/deviceList?dvcKindCd=001",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"school",
+						"v1",
+						"device",
+						"deviceList"
+					],
+					"query": [
+						{
+							"key": "dvcKindCd",
+							"value": "001",
+							"equals": true,
+							"description": "001        도어락\n002        보일러\n003        에어컨\n004        공기청정기\n005        제습기\n006        로봇청소기\n007        가스차단기\n008        스마트콘센트\n009        조명기기"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resultList\":\t[\n    \t{\"msgGoodsChgYn\": \"Y\"},\n    \t{\"msgSmartOptYn\": \"Y\"},\n    \t{\"msgSmartDefectYn\": \"Y\"},\n    \t{\"msgEventYn\": \"Y\"},\n    \t{\"mktAgrYn\": \"Y\"},\n    \t{\"mktAgrDtm\": \"20160708\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "113 기기 등록 후 디바이스 정보 제공",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/registDevice",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dvcCd\": \"DVC0001350\",\n\t\"regMarkerId\": \"1\",\n\t\"regModelId\": \"1\",\n\t\"regModelType\": \"\",\n\t\"regSerialNo\": \"1\",\n\t\"regSsid\": \"1\",\n\t\"brdgDvcId\": \"\",\n\t\"reqDevId\": \"\",\n\t\"reqDevKey\": \"\",\n\t\"soneRegDtm\": \"\",\n\t\"commandId\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "114 여러 개의 디바이스 제어",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/company/controlDevice",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dvcList\": [\n\t\t{\"dvcCd\": \"DVC0001350\"},\n\t\t{\"rtnDvcId\": \"D11934973066\"},\n\t\t{\"commandType\": \"D03\"},\n\t\t{\"requestValue\": \"open\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "115 여러 개의 디바이스 제어 결과 폴링 조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/company/commandPolling?commandList[commandId]=",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"company",
+						"commandPolling"
+					],
+					"query": [
+						{
+							"key": "commandList[commandId]",
+							"value": "",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTxfWTc4ZCBqJKI7c6c2zRl",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dvcList\": [\n\t\t{\"dvcCd\": \"\"},\n\t\t{\"rtnDvcId\": \"\"},\n\t\t{\"commandType\": \"\"},\n\t\t{\"requestValue\": \"\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "116 여러 개의 디바이스 제어 결과 폴링 조회 2",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/commandPolling2?commandList[commandId]=",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"commandPolling2"
+					],
+					"query": [
+						{
+							"key": "commandList[commandId]",
+							"value": "",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dvcList\": [\n\t\t{\"dvcCd\": \"\"},\n\t\t{\"rtnDvcId\": \"\"},\n\t\t{\"commandType\": \"\"},\n\t\t{\"requestValue\": \"\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "117 모드 등록",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v2/mode/manage",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modeNm\": \"수면\",\n\t\"schdChgYn\": \"N\",\n\t\"schdKindCd\": \"\",\n\t\"schdStartTime\": \"\",\n\t\"reptDowCd\": \"\",\n\t\"schdSetStatCd\": \"\",\n\t\"dvcList\": [\n\t\t{\"dvcId\": \"\"},\n\t\t{\"dvcCd\": \"\"},\n\t\t{\"dvcKindCd\": \"\"},\n\t\t{\"dvcModelNo\": \"\"},\n\t\t{\"modelRelYn\": \"\"},\n\t\t{\"chgYn\": \"\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "118 모드 수정",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v2/mode/manage/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modeSer\": \"\",\n\t\"modeNm\": \"\",\n\t\"schdChgYn\": \"N\",\n\t\"schdSer\": \"\",\n\t\"schKindCd\": \"\",\n\t\"schdStartTime\": \"\",\n\t\"reptDowCd\": \"\",\n\t\"schdSetStatCd\": \"\",\n\t\"modeTrgChgYn\": \"\",\n\t\"trgSetStatCd\": \"N\",\n\t\"dvcList\" : [\n\t\t{\"dvcId\": \"\"},\n\t\t{\"dvcCd\": \"\"},\n\t\t{\"dvcKindCd\": \"\"},\n\t\t{\"dvcModelNo\": \"\"},\n\t\t{\"modeRelYn\": \"\"},\n\t\t{\"chgYn\": \"\"}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "119 모드 삭제",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v2/mode/manage/del",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFTYjgsg6T5RbNKQIqU41eZN",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modeSer\": \"\",\n\t\"schdSer\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "120 모드실행",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v2/mode/run",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "BTV",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"modeSer\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "121 상세모드 등록 및 수정",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/detailMode/manage",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "BTV",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"detailModeSer\": \"\",\n\t\"modeNm\": \"수면\",\n\t\"schdKindCd\": \"One\",\n\t\"timeKindCd\": \"A\",\n\t\"schdStartTime\": \"\",\n\t\"schEndTime\": \"\",\n\t\"modeKindCd\": \"\",\n\t\"reptDowCd\": \"\",\n\t\"msgInfo\": \"\",\n\t\"autoRunYn\": \"Y\",\n\t\"conditionList\": [\n\t\t{\"conditionCd\": \"001\"},\n\t\t{\"conditionVal1\": \"\"},\n\t\t{\"conditionVal2\": \"\"},\n\t\t{\"dvcId\": \"\"},\n\t\t{\"dvcCd\": \"\"},\n\t\t{\"conditionDesc\": \"\"},\n\t\t{\"conditionDvcList\": [\n\t\t\t{\"dvcId\": \"\"},\n\t\t\t{\"fncCd\": \"\"},\n\t\t\t{\"fncVal\": \"\"}\n\t\t\t]}\n\t\t]\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "122 상세모드 삭제",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/detailMode/delete",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "BTV",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"detailModeSer\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "123 상세모드 실행",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/detailMode/detailModeRun",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "BTV",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"detailModeSer\": \"\",\n\t\"svcReqSer\": \"\",\n\t\"detailModeRunYn\": \"N\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

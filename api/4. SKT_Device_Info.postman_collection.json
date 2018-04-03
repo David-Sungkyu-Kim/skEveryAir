@@ -1,0 +1,101 @@
+{
+	"variables": [],
+	"info": {
+		"name": "4.SKT_Device_Info",
+		"_postman_id": "10963298-6d4d-8350-6876-55bcfea6c052",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "131. 디바이스 정보 조회",
+			"request": {
+				"url": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/open/dvc/simple/info",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFR30DHe7N8omaOuATXruavA",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcIdList\": [\r\n  {\"rtnDvcId\": \"D99628241951\"}\r\n,   {\"rtnDvcId\": \"D51898272971\"}\r\n,   {\"rtnDvcId\": \"D61341120462\"}\r\n]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "132. 디바이스 상세조회",
+			"request": {
+				"url": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/open/dvc/display/info",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFR30DHe7N8omaOuATXruavA",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"rtnDvcIdList\": [\r\n  {\"rtnDvcId\": \"D93033427537\"}\r\n,   {\"rtnDvcId\": \"D51777976497\"}\r\n,   {\"rtnDvcId\": \"D85637884641\"}\r\n]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "133. 기기별 꺼짐 예약 등록",
+			"request": {
+				"url": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/open/device/schedule/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPlSknyqQqWipXT021cvvFFR30DHe7N8omaOuATXruavA",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"rtnDvcId\": \"D93033427537\",\r\n  \"schdStartTime\" : \"010000\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

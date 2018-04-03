@@ -1,0 +1,16 @@
+<div class="box_card _dustsensor">
+    <p class="card_title title_set">먼지센서 감도 설정</p>
+    <div class="box_setting">
+        {{#each openDeviceList}}
+            {{#isDustSensor fncCd}}
+                <ul class="clearfix">
+                    <li data-fncCd="{{fncCd}}"  data-dvcCd="{{../dvcCd}}" data-rtnDvcId="{{rtnDvcId}}" data-fncVal="01" class="{{isSameFocus fncVal '01'}}"><a href="#"><span>둔감</span></a></li>
+                    <li data-fncCd="{{fncCd}}"  data-dvcCd="{{../dvcCd}}" data-rtnDvcId="{{rtnDvcId}}" data-fncVal="02" class="{{isSameFocus fncVal '02'}}"><a href="#"><span>보통</span></a></li>
+                    <li data-fncCd="{{fncCd}}"  data-dvcCd="{{../dvcCd}}" data-rtnDvcId="{{rtnDvcId}}" data-fncVal="03" class="{{isSameFocus fncVal '03'}}"><a href="#"><span>민감</span></a></li>
+                    <li data-fncCd="{{fncCd}}"  data-dvcCd="{{../dvcCd}}" data-rtnDvcId="{{rtnDvcId}}" data-fncVal="04" class="{{isSameFocus fncVal '04'}}"><a href="#"><span>아주<br>민감</span></a></li>
+                </ul>
+            {{/isDustSensor}}
+        {{/each}}
+
+    </div>
+</div>

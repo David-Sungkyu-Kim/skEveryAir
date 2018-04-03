@@ -1,0 +1,13 @@
+
+    {{#each resultList}}
+        <div class="area_history_box">
+            <p class="day"><span class="sprite sprite_common sprite_history_dot">?</span>{{checkSendMd sendMd}}</p><div class="box_alarm">
+            <div class="alarm_desc">
+                <div class="icon_alarm"><p><span class="sprite sprite_common {{dvcIconCheck dvcKindCd}}">?</span>{{dvcNmCheck dvcKindCd}}
+                </p></div>
+                <p class="desc">{{actMsg}}</p>
+                <p class="time">{{checkSendHm sendHm}}</p>
+            </div>
+        </div>
+        </div>
+    {{/each}}

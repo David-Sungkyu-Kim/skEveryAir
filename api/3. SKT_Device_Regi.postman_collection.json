@@ -1,0 +1,359 @@
+{
+	"variables": [],
+	"info": {
+		"name": "3. SKT_Device_Regi",
+		"_postman_id": "4a423664-312d-63ce-447b-0dffde2816d5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "124. 선택 디바이스 등록",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/registDevice",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"stsRequestRegi\": [],\n\t\"dvcCd\": \"DVC0001350\",\n\t\"regMakerId\": \"\",\n\t\"regModelId\": \"\",\n\t\"regModelType\": \"\",\n\t\"regSerialNo\": \"testauth\",\n\t\"regSsid\": \"\",\n\t\"reqDevID\": \"1111\",\n\t\"reqDevKey\": \"L22958323254\",\n\t\"soneRegDtm\": \"\",\n\t\"commandId\": \"\",\n\t\"shCertId\": \"DVC0000009\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "125. 서버투서버 디바이스 리스트 I/F 조회",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/stsDeviceList",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dvcCd\": \"DVC0001350\",\n\t\"regSerialNo\": \"testauth\",\n\t\"reqDevID\": \"1111\",\n\t\"reqDevKey\": \"L22958323254\",\n\t\"shCertId\": \"DVC0000009\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "126. 서버투서버 디바이스 리스트 조회",
+			"request": {
+				"url": " http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/stsQueList",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"commandId\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "127. 디바이스 등록 결과 폴링조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/regiPolling?rtnDvcId=D93033427537",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"regiPolling"
+					],
+					"query": [
+						{
+							"key": "rtnDvcId",
+							"value": "D93033427537",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rtnDvcId\": \"D93033427537\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "128. S2S 리스트 결과 폴링조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/s2sPolling?commandId",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"s2sPolling"
+					],
+					"query": [
+						{
+							"key": "commandId",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rtnDvcId\": \"D93033427537\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "129. S2S 패스워드 업데이트 결과 폴링조회",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/updatePolling?commandId",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"updatePolling"
+					],
+					"query": [
+						{
+							"key": "commandId",
+							"value": "",
+							"equals": false,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rtnDvcId\": \"D93033427537\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "130. 디바이스 등록 결과 폴링조회 (시리얼로 조회하기)",
+			"request": {
+				"url": {
+					"raw": "http://iot.ubiveloxmobile.com/skt/smarthome/v1/device/regiPollingBySn?regSerialNo=testauth",
+					"protocol": "http",
+					"host": [
+						"iot",
+						"ubiveloxmobile",
+						"com"
+					],
+					"path": [
+						"skt",
+						"smarthome",
+						"v1",
+						"device",
+						"regiPollingBySn"
+					],
+					"query": [
+						{
+							"key": "regSerialNo",
+							"value": "testauth",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "vBVbrb88bK6Ns0EaKsTnPqLR5vs06jELqrM02IyN80K8nd9m+mI+2y9NN+cxr8RD",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "company",
+						"value": "school",
+						"description": ""
+					},
+					{
+						"key": "smartmode",
+						"value": "",
+						"description": "스마트 모드 구분 (default:true)(O)",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rtnDvcId\": \"D93033427537\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
