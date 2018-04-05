@@ -77,8 +77,6 @@ directory.globalEventView = Backbone.View.extend({
         // 메뉴 호출
         this.welDoc.on('click', '._openAllMenu', $.proxy(this.openAllMenu, this));
         this.welDoc.on('click', '._moveToSearchSchool', $.proxy(this.moveToSearchSchool, this));
-        // this.welDoc.on('click', '._moveToDetail', $.proxy(this.moveToAirMultiSensor, this));
-        // this.welDoc.on('click', '._moveToDetail', $.proxy(this.moveToAirPurifier, this));
         this.welDoc.on('click', '._moveToDetail', $.proxy(this.moveToDetail, this));
 
         // 시간 설정 팝업
@@ -95,23 +93,15 @@ directory.globalEventView = Backbone.View.extend({
 
         // 공기리포트 이동
         this.welDoc.on('click', '.btn_report', $.proxy(this.moveToAirReport, this));
-
         this.welDoc.on('click', '._tab_dust a', $.proxy(this.tabDust, this));
-
         this.welDoc.on('click', '._daily', $.proxy(this.daily, this));
-
         this.welDoc.on('click', '._weekly', $.proxy(this.weekly, this));
-
         this.welDoc.on('click', '._monthly', $.proxy(this.monthly, this));
-
         this.welDoc.on('click', '._yearly', $.proxy(this.yearly, this));
-
         this.welDoc.on('click', '._yesterday', $.proxy(this.yesterday, this));
-
         this.welDoc.on('click', '._tomorrow', $.proxy(this.tomorrow, this));
 
         //device 공통 이벤트
-
         this.welDoc.on('click', '._btnOkError', $.proxy(this.errorPopupClose, this));
 
         //connStatYn N 상태일 때
@@ -121,14 +111,11 @@ directory.globalEventView = Backbone.View.extend({
             self.onScrollAlarm();
         });
 
-
         setTimeout(function () {
             $('body').find('>div').on('swipedown', function (e, touch) {
                 self.refreshPullDown(e, touch)
             });
         }, 500)
-
-
     },
     onScrollAlarm: function () {
         if(window.location.hash === '#historyAlarm'){
@@ -139,7 +126,6 @@ directory.globalEventView = Backbone.View.extend({
                 App.view.historyAlarm.scrollRender(App.vars.serdSer)
             }
         }
-
     },
     moveToAirReport: function () {
         window.location.hash ="#airReport";
@@ -156,6 +142,7 @@ directory.globalEventView = Backbone.View.extend({
     moveToDetail: function (event) {
         var target = $(event.currentTarget);
 
+        // 기기 상세에 쓸 데이터 전역변수화...
         App.vars.oSchoolDetail = {
             rtnDvcIdList: [],
             oDeviceInfo: [],
@@ -197,11 +184,6 @@ directory.globalEventView = Backbone.View.extend({
         if (App.vars.loginId) {
             window.location.hash = "#schoolDetail";
         } else {
-            /*if(isMobile.Android()){
-                window.AirManager.callLoginView();
-            }else{
-                window.webkit.messageHandlers.AirManager.postMessage({command:"callLoginView"});
-            }*/
 
             if (typeof window.AirManager !== 'undefined') {
                 // android
@@ -209,8 +191,6 @@ directory.globalEventView = Backbone.View.extend({
             } else if (typeof window.webkit !== 'undefined') {
                 // ios
                 window.webkit.messageHandlers.AirManager.postMessage({command: "callLoginView"});
-            } else {
-                // pc
             }
             App.vars.afterLogin = "schoolDetail"
         }
@@ -218,42 +198,15 @@ directory.globalEventView = Backbone.View.extend({
 
     openAllMenu: function () {
 
-        /*if(isMobile.Android()){
-            window.AirManager.callSideMenu();
-        }else{
-            window.webkit.messageHandlers.AirManager.postMessage({command:"callSideMenu"});
-        }*/
-
         if (typeof window.AirManager !== 'undefined') {
             // android
             window.AirManager.callSideMenu();
         } else if (typeof window.webkit !== 'undefined') {
             // ios
             window.webkit.messageHandlers.AirManager.postMessage({command: "callSideMenu"});
-        } else {
-            // pc
         }
     },
     movePrevPage: function () {
-        // if (App.vars.multipleWebapp) {
-        //     if (window.history.length <= 3) {
-        //         if (typeof window.AirManager !== 'undefined') {
-        //             // android
-        //             window.AirManager.callAppExit();
-        //         } else if (typeof window.webkit !== 'undefined') {
-        //             // ios
-        //             window.webkit.messageHandlers.AirManager.postMessage({command:"callAppExit"});
-        //         } else {
-        //             // pc
-        //             alert('앱 종료 혹은 웹뷰 종료');
-        //         }
-        //     } else {
-        //         window.history.back();
-        //     }
-        // } else {
-        // $('h1').text(window.history.length);
-        // setTimeout(function () {
-
 
         if (App.router.history.length <= 2 ||
             (window.location.hash == "#home" && App.mainMap.zoom < 17) ||
@@ -268,7 +221,7 @@ directory.globalEventView = Backbone.View.extend({
                 window.webkit.messageHandlers.AirManager.postMessage({command: "callAppExit"});
             } else {
                 // pc
-                alert('앱 종료 혹은 웹뷰 종료');
+                //alert('앱 종료 혹은 웹뷰 종료');
             }
         } else if (window.location.hash == "#home" && App.mainMap.zoom >= 17) {
             App.view.globalEventView.initMap();
@@ -276,25 +229,6 @@ directory.globalEventView = Backbone.View.extend({
             App.router.history.pop();
             return App.router.navigate(App.router.history.pop(), true);
         }
-
-
-        // if (window.history.length <= 2) {
-        //     if (typeof window.AirManager !== 'undefined') {
-        //         // android
-        //         window.AirManager.callAppExit();
-        //     } else if (typeof window.webkit !== 'undefined') {
-        //         // ios
-        //         window.webkit.messageHandlers.AirManager.postMessage({command:"callAppExit"});
-        //     } else {
-        //         // pc
-        //         alert('앱 종료 혹은 웹뷰 종료');
-        //     }
-        // } else {
-        //     window.history.back();
-        // }
-        // },2000)
-
-        // }
 
     },
     registerMySchool: function (e) {
@@ -331,7 +265,6 @@ directory.globalEventView = Backbone.View.extend({
                 } else if(window.location.hash === '#schoolDetail') {
                     App.view.schoolDetail.deleteMySchool(self.oDeleteInfo);
                 }
-
 
             }
         }
@@ -455,11 +388,6 @@ directory.globalEventView = Backbone.View.extend({
             } else if (typeof window.webkit !== 'undefined') {
                 window.webkit.messageHandlers.AirManager.postMessage({command: "callLoginView"});
             }
-            /*if(isMobile.Android()){
-                window.AirManager.callLoginView();
-            }else{
-                window.webkit.messageHandlers.AirManager.postMessage({command:"callLoginView"});
-            }*/
             App.vars.afterLogin = "mySchoolDetail";
         }
 
@@ -481,11 +409,6 @@ directory.globalEventView = Backbone.View.extend({
                 } else if (typeof window.webkit !== 'undefined') {
                     window.webkit.messageHandlers.AirManager.postMessage({command: "callLoginView"});
                 }
-                /*if(isMobile.Android()){
-                    window.AirManager.callLoginView();
-                }else{
-                    window.webkit.messageHandlers.AirManager.postMessage({command:"callLoginView"});
-                }*/
                 App.vars.afterLogin = "mySchoolDetail";
             }
         }else{
@@ -496,7 +419,6 @@ directory.globalEventView = Backbone.View.extend({
         var self = this;
         var target = $(event.currentTarget);
         var elTabMenu = $('.tab-menu li');
-        var elFocusMenu = $('.tab-menu li.focus');
         var ntabMenuIndex = target.parent().index();
         target.parent().addClass('focus').removeClass('visited').siblings().removeClass('focus');
         if (ntabMenuIndex == "0") {
@@ -579,23 +501,9 @@ directory.globalEventView = Backbone.View.extend({
         target.parent().toggleClass('current')
     },
     initMap: function (evt) {
-        /*App.view.homeMain.mainMap.destroy();*/
         App.view.homeMain.refreshMap(evt);
     },
     moveMyLocation: function () {
-        //App.view.homeMain.moveMyLocation();
-        /*if (App.vars.loginId) {
-            App.view.homeMain.moveMyLocation();
-        } else {
-            if (typeof window.AirManager !== 'undefined') {
-                // android
-                window.AirManager.callLoginView();
-            } else if (typeof window.webkit !== 'undefined') {
-                window.webkit.messageHandlers.AirManager.postMessage({command: "callLoginView"});
-            }
-
-        }*/
-
         window.AirManagerWeb = {
             callbackCurrentPosition: function (lat, lon) {
 
@@ -648,22 +556,15 @@ directory.globalEventView = Backbone.View.extend({
         }else{
             App.vars.rtnDvcId = rtnDvcId;
         }
-        //App.vars.prevLocation = window.location.hash;
         window.location.hash = "#historyAlarm";
     },
     goToInformationDetail: function () {
-        //App.vars.prevLocation = window.location.hash;
         window.location.hash = "#informationDetail";
     },
-    /*goToAirReportDetail: function () {
-        App.vars.prevLocation = window.location.hash;
-        window.location.hash = "#airReportDetail";
-    },*/
     goToSchoolDetail: function (e) {
         var target = $(e.currentTarget);
         var sParamSchoolCode = target.data('school-code');
         var sSchoolTitle = target.find('.name').text();
-        /*App.router.navigate("mySchoolDetail", sParamSchoolCode);*/
 
         App.vars.oSchoolCode = sParamSchoolCode;
         App.vars.sSelectedSchoolTitle = sSchoolTitle;
@@ -679,16 +580,10 @@ directory.globalEventView = Backbone.View.extend({
             } else if (typeof window.webkit !== 'undefined') {
                 window.webkit.messageHandlers.AirManager.postMessage({command: "callLoginView"});
             }
-            /*            if(isMobile.Android()){
-                            window.AirManager.callLoginView();
-                        }else{
-                            window.webkit.messageHandlers.AirManager.postMessage({command:"callLoginView"});
-                        }*/
             App.vars.afterLogin = "mySchoolDetail";
         }
     },
     tabDust: function (event) {
-        var self = this;
         var target = $(event.currentTarget);
         var reqType = target.data("reqtype");
         var title = $('.score_title')[0].innerText;
@@ -891,7 +786,7 @@ directory.globalEventView = Backbone.View.extend({
         var nTransformTime = nReservationTime.format("hh:mm");
         var sReservationTimeDayAmPm = nReservationTime.calendar().slice(0, 5);
         var sReservationTimeAmPm = nReservationTime.calendar().slice(3, 5);
-        console.log(nHours)
+        // console.log(nHours)
         $('._turnoff').addClass('active');
         if (oCurrentTime.date == oReservationTime.date) {
             $('.turn_off_timer .desc_date .day').text(sReservationTimeAmPm);
@@ -909,13 +804,6 @@ directory.globalEventView = Backbone.View.extend({
         $('#networkErrorPopup').remove();
         App.router.history.pop();
         return App.router.navigate(App.router.history.pop(), true);
-
-        /*if(window.location.hash === "#historyAlarm"){
-            App.router.history.pop();
-            return App.router.navigate(App.router.history.pop(), true);
-        }else{
-
-        }*/
 
     },
     connectErrorPopupClose: function (e) {
