@@ -46,7 +46,7 @@ directory.mySchoolDetail = Backbone.View.extend({
 
                 for (var i = 0; i < self.oSchoolList.schList.length; i++) {
                     // 학교 아이디와 전역변수 학교리스트의 값이 맞으면 시작
-                    if (self.oSchoolList.schList[i].schCd == self.oSchoolCode.schCd) {
+                    if (self.oSchoolList.schList[i].schCd === self.oSchoolCode.schCd) {
                         oSchList = self.oSchoolList.schList[i];
                     }
                 }
@@ -55,8 +55,8 @@ directory.mySchoolDetail = Backbone.View.extend({
                         oSchList.clsList.forEach(function (array, index) {
                             for (var j = 0; j < self.$el.find('.area_grade_list li').length; j++) {
                                 if (
-                                    array.lv == self.$el.find('._registerMySchool').eq(j).data('lv') &&
-                                    array.cls == self.$el.find('._registerMySchool').eq(j).data('cls')
+                                    array.lv === self.$el.find('._registerMySchool').eq(j).data('lv') &&
+                                    array.cls === self.$el.find('._registerMySchool').eq(j).data('cls')
                                 ) {
                                     self.$el.find('._registerMySchool').eq(j).prop('checked', true)
                                         .attr('id', oSchList.clsList[index].userSchId);
@@ -86,20 +86,18 @@ directory.mySchoolDetail = Backbone.View.extend({
             },
             data: JSON.stringify(self.oSchoolCode),
             beforeSend: function () {
-                /*App.util.pageLoadingShow();*/
             },
             success: function (model, response) {
 
                 App.vars.oSchoolDetailInfo = self.oSchoolDetailInfo = response;
 
-                // self.oSchoolDetailInfo.lvList = [];
                 var lvList = [];
                 var setLvList = [];
                 var schoolAllInfo;
                 for (var i = 0; i < 6; i++) {
                     for (var j = 0; j < self.oSchoolDetailInfo.clsList.length; j++) {
-                        if (self.oSchoolDetailInfo.clsList[j].lv == i + 1) {
-                            if (lvList[i] == undefined) {
+                        if (self.oSchoolDetailInfo.clsList[j].lv === i + 1) {
+                            if (lvList[i] === undefined) {
                                 lvList[i] = []
                             }
                             lvList[i].push(self.oSchoolDetailInfo.clsList[j])
@@ -138,7 +136,7 @@ directory.mySchoolDetail = Backbone.View.extend({
                 if (
                     App.vars.schCd === undefined ||
                     App.vars.schCd === '' ||
-                    App.vars.schCd === null
+                    App.vars.schCd == null
 
                 ) {
                     self.$el.find('._registerMySchool').show();
@@ -255,33 +253,34 @@ directory.mySchoolDetail = Backbone.View.extend({
             onSliderLoad: function () {
 
                 for (var i = 0; i < outSensor.length; i++) {
-                    airGrd = outSensor[i].airGrd
+                    airGrd = outSensor[i].airGrd;
+                    var $pager = $('.bx-pager-item');
                     switch (airGrd) {
                         case "매우좋음" :
-                            $('.bx-pager-item').eq(i).addClass('best');
+                            $pager.eq(i).addClass('best');
                             break;
                         case "좋음" :
                         case "청정" :
-                            $('.bx-pager-item').eq(i).addClass('good');
+                            $pager.eq(i).addClass('good');
                             break;
                         case "보통" :
                         case "저오염" :
-                            $('.bx-pager-item').eq(i).addClass('normal');
+                            $pager.eq(i).addClass('normal');
                             break;
                         case "나쁨" :
-                            $('.bx-pager-item').eq(i).addClass('bad');
+                            $pager.eq(i).addClass('bad');
                             break;
                         case "중오염" :
-                            $('.bx-pager-item').eq(i).addClass('harm');
+                            $pager.eq(i).addClass('harm');
                             break;
                         case "매우나쁨" :
                         case "고오염" :
-                            $('.bx-pager-item').eq(i).addClass('worse');
+                            $pager.eq(i).addClass('worse');
                             break;
                         case null :
                         case undefined :
                         case "" :
-                            $('.bx-pager-item').eq(i).addClass('off');
+                            $pager.eq(i).addClass('off');
                             break;
                     }
                 }
@@ -295,7 +294,6 @@ directory.mySchoolDetail = Backbone.View.extend({
         } else {
             App.vars.sSelectedLvClass = cls;
         }
-        // App.vars.sSelectedLvClass = lvClass;
         // App.vars.aDeviceId = {"rtnDvcIdList": [{"rtnDvcId": dvcId}]}
     }
 });
